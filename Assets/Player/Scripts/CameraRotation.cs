@@ -25,8 +25,6 @@ public class CameraRotation : MonoBehaviour
             newAngleX -= 360;
         newAngleX = Mathf.Clamp(newAngleX, minAngle, maxAngle);
         
-
-        Debug.Log(newAngleX);
         
 
         CameraAxisTransform.localEulerAngles = new Vector3(newAngleX, 0, 0);
