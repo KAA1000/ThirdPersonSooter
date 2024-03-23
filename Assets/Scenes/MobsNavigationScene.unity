@@ -437,6 +437,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 405302916840600893, guid: f29dc18064520a049a7483fef9860d15,
+        type: 3}
+      propertyPath: fireballPrefab
+      value: 
+      objectReference: {fileID: 2469958983451730953, guid: 8d1418b0f4986d44aab400c90336670b,
+        type: 3}
     - target: {fileID: 3551009494006492710, guid: f29dc18064520a049a7483fef9860d15,
         type: 3}
       propertyPath: m_RootOrder
@@ -603,6 +609,8 @@ GameObject:
   - component: {fileID: 785700598}
   - component: {fileID: 785700599}
   - component: {fileID: 785700600}
+  - component: {fileID: 785700601}
+  - component: {fileID: 785700602}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -667,6 +675,33 @@ MonoBehaviour:
   - {fileID: 112721951}
   Player: {fileID: 1056546214}
   viewAngle: 90
+--- !u!114 &785700601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785700597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de03c1d28d31cb41b04ae1521f10a53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHp: 100
+--- !u!136 &785700602
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785700597}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &868411332
 GameObject:
   m_ObjectHideFlags: 0
