@@ -24,6 +24,13 @@ public class PlayerHealth : MonoBehaviour
         }
         DrawHealthBar();
     }
+    public void AddHp(float hp)
+    {
+        playerHp += hp;
+        playerHp = Mathf.Clamp(playerHp,0,_maxPLayerHp) ;
+        DrawHealthBar();
+    }
+
     private void PlayerIsDead()
     {
         gameplayUI.SetActive(false);
