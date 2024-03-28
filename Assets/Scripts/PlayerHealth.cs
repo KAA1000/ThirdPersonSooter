@@ -38,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<PlayerController>().enabled = false;
         GetComponent<fireballCaster>().enabled = false;
         GetComponent<CameraRotation>().enabled = false;
+        FindObjectOfType<EnemySpawner>().enabled = false;
     }
     private void DrawHealthBar()
     {

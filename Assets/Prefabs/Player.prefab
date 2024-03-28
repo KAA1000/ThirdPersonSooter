@@ -652,6 +652,7 @@ MonoBehaviour:
     type: 3}
   grenadeSourceTransform: {fileID: 7021256852596335119}
   force: 500
+  damage: 50
 --- !u!114 &4186115274089867814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,37 +669,37 @@ MonoBehaviour:
   levelValueTMP: {fileID: 4429197204169272081}
   levels:
   - fireballDamage: 10
-    grenadeDamage: 0
+    grenadeDamage: -1
     expirienseForNextLevel: 20
   - fireballDamage: 12
-    grenadeDamage: 0
+    grenadeDamage: -1
     expirienseForNextLevel: 100
   - fireballDamage: 20
-    grenadeDamage: 0
+    grenadeDamage: -1
     expirienseForNextLevel: 150
   - fireballDamage: 26
-    grenadeDamage: 0
+    grenadeDamage: 26
     expirienseForNextLevel: 250
   - fireballDamage: 40
-    grenadeDamage: 0
+    grenadeDamage: 67
     expirienseForNextLevel: 400
   - fireballDamage: 56
-    grenadeDamage: 0
+    grenadeDamage: 89
     expirienseForNextLevel: 700
   - fireballDamage: 74
-    grenadeDamage: 0
+    grenadeDamage: 99
     expirienseForNextLevel: 1200
   - fireballDamage: 95
-    grenadeDamage: 0
+    grenadeDamage: 140
     expirienseForNextLevel: 2000
   - fireballDamage: 95
-    grenadeDamage: 0
+    grenadeDamage: 170
     expirienseForNextLevel: 3000
   - fireballDamage: 120
     grenadeDamage: 0
     expirienseForNextLevel: 4500
   - fireballDamage: 160
-    grenadeDamage: 0
+    grenadeDamage: 200
     expirienseForNextLevel: 7000
 --- !u!1 &3551009494036785550
 GameObject:

@@ -8,10 +8,11 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     public List<Transform> patrolPoints;
-    public PlayerController Player;
+    private PlayerController Player;
     public float viewAngle;
     public float damage = 30;
     private PlayerHealth _playerHealth;
+    public EnemyHealth enemyHealth;
     
 
     private NavMeshAgent _navMeshAgent;
@@ -51,9 +52,13 @@ public class EnemyAI : MonoBehaviour
 
     private void InitComponentLinks()
     {
+        Player = FindObjectOfType<PlayerController>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _playerHealth = Player.GetComponent<PlayerHealth>();
+        enemyHealth = GetComponent<EnemyHealth>();
     }
+    
+
 
     //Проевека на наличие игрока в поле зрения. Присваивает переменной значиние типа boolean
     private void NoticePlayerUpdate()
@@ -89,6 +94,11 @@ public class EnemyAI : MonoBehaviour
         {
             _playerHealth.DealDamage(damage * Time.deltaTime);
         }
+    }
+
+    public bool IsEnemyAlive()
+    {
+        return enemyHealth.IsEnemyAlive();
     }
 }
 
