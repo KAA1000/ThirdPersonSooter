@@ -19,6 +19,7 @@ public class PlayerProgress : MonoBehaviour
     {
         SetLevel(_levelValue);
         DrawUI();
+
     }
 
     public void AddExpirience(float value)
@@ -36,7 +37,8 @@ public class PlayerProgress : MonoBehaviour
     public void SetLevel(int value)
     {
         _levelValue = value;
-        var currectLevel = levels[value];
+        _levelValue = Mathf.Clamp(_levelValue,0, levels.Count - 1);
+        var currectLevel = levels[_levelValue];
         _targetExpirienceValue = currectLevel.expirienseForNextLevel;
         GetComponent<fireballCaster>().damage = currectLevel.fireballDamage;
 

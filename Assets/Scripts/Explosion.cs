@@ -6,7 +6,7 @@ public class Explosion : MonoBehaviour
 {
     public float maxSize = 5;
     public float damage = 50;
-    public float speed = 2;
+    public float speed = 1;
     void Start()
     {
         transform.localScale = Vector3.zero;

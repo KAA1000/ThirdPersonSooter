@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class fireballCaster : MonoBehaviour
 {
+    public AudioSource shootSound;
     public Fireball fireballPrefab;
     public Transform fireballSource;
     public float damage = 10;
@@ -20,6 +21,7 @@ public class fireballCaster : MonoBehaviour
         {
             var fireball = Instantiate(fireballPrefab, fireballSource.position, fireballSource.rotation);
             fireball.damage = damage;   
+            shootSound.Play();
         }
     }
 }

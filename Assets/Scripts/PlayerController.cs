@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
 
     private CharacterController _characterController;
+    public Animator playerAnimationController;
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
@@ -48,6 +49,8 @@ public class PlayerController : MonoBehaviour
         {
             _fallVelocity = -jumpForce;
         }
+
+        AnimationControllerUpdate();
     }
 
     // Update is called once per frame
@@ -60,6 +63,22 @@ public class PlayerController : MonoBehaviour
         if( _characterController.isGrounded )
         {
             _fallVelocity = 0;
+        }
+    }
+
+    private void AnimationControllerUpdate()
+    {
+        if ( _moveVector == Vector3.zero)
+            {
+            playerAnimationController.SetInteger("animator value", 0);
+            }
+        else
+        {
+            playerAnimationController.SetInteger("animator value", 1);
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            playerAnimationController.SetInteger("animator value", 2);
         }
     }
 }

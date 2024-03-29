@@ -17,5 +17,6 @@ public class Grenade : MonoBehaviour
         var explosion = Instantiate(explosionPrefab);
         explosion.transform.position = transform.position;
         explosion.GetComponent<Explosion>().damage = damage;
+
     }
 }

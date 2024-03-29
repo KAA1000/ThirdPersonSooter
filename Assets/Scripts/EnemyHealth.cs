@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float enemyHp = 100;   
+    public float enemyHp = 100;
     private PlayerProgress progress;
+    public Animator enemyAnimator;
+    public AudioSource enemyDeathSound;
     
 
     private void Start()
@@ -18,8 +21,9 @@ public class EnemyHealth : MonoBehaviour
         enemyHp -= damage;
         if (enemyHp <= 0)
         {
-
-            Destroy(gameObject);
+            OnEnemyDeath();
+            //Destroy(gameObject);
+            
 
             
         }
@@ -32,6 +36,20 @@ public class EnemyHealth : MonoBehaviour
         }
         else return true;
     }
-    
+
+    private void OnEnemyDeath()
+    {
+        GetComponent<EnemyAI>().enabled = false;
+        GetComponent<NavMeshAgent>().enabled = false;
+        GetComponent<CapsuleCollider>().enabled = false;
+        enemyAnimator.SetTrigger("death");
+        enemyDeathSound.Play();
+        Invoke("EnemyDestroyObject", 4);
+    }
+
+    private void EnemyDestroyObject()
+    {
+        Destroy(gameObject);
+    }
 
 }

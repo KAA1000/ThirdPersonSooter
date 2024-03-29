@@ -39,6 +39,8 @@ public class EnemySpawner : MonoBehaviour
             enemy.patrolPoints = patrolPoints;
             enemies.Add(enemy);
             enemyHealth.enemyHp += 2;
+            enemyHealth.enemyHp = Mathf.Clamp(enemyHealth.enemyHp, 0, 300);
+
             lastEnemyCreateTime = Time.timeSinceLevelLoad;
             enemySpawnCooldown -= 0.1f;
             enemySpawnCooldown = Mathf.Clamp(enemySpawnCooldown,1,10);
